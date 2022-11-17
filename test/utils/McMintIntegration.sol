@@ -78,7 +78,6 @@ contract McMintIntegration is Test, WithRegistry {
     changePrank(actor("deployer"));
     celoToken = new Token("Celo", "cGLD", 18);
     usdcToken = new Token("USDCet", "USDCet", 18);
-    exchange = address(21);
 
     address[] memory initialAddresses = new address[](0);
     uint256[] memory initialBalances = new uint256[](0);
@@ -111,7 +110,6 @@ contract McMintIntegration is Test, WithRegistry {
 
     vm.label(address(cUSDToken), "cUSD");
     vm.label(address(cEURToken), "cEUR");
-    registry.setAddressFor("Exchange", address(exchange));
   }
 
   function setUp_reserve() internal {

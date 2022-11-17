@@ -29,7 +29,7 @@ contract SortedOraclesTest is Test {
   address token;
   uint256 aReportExpiry = 3600;
   uint256 fixed1 = FixidityLib.unwrap(FixidityLib.fixed1());
-  
+
   address oracle;
   address oracleA;
   address oracleB;
@@ -43,7 +43,7 @@ contract SortedOraclesTest is Test {
   function setUp() public {
     sortedOracles = new SortedOracles(true);
     sortedOracles.initialize(aReportExpiry);
-    
+
     owner = address(this);
     notOwner = address(10);
     rando = address(2);
