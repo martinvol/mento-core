@@ -249,7 +249,7 @@ contract Broker is IBroker, IBrokerAdmin, Initializable, Ownable, ReentrancyGuar
     } else if (reserve.isCollateralAsset(token)) {
       require(reserve.transferExchangeCollateralAsset(token, to, amount), "Transfer of the collateral asset failed");
     } else {
-      revert("Token must be stable or collateral assert");
+      revert("Token must be stable or collateral asset");
     }
   }
 
@@ -272,7 +272,7 @@ contract Broker is IBroker, IBrokerAdmin, Initializable, Ownable, ReentrancyGuar
     } else if (reserve.isCollateralAsset(token)) {
       IERC20(token).safeTransferFrom(from, address(reserve), amount);
     } else {
-      revert("Token must be stable or collateral assert");
+      revert("Token must be stable or collateral asset");
     }
   }
 
