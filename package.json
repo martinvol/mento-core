@@ -18,7 +18,8 @@
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-dev.22",
     "solhint": "^3.3.7",
-    "solhint-plugin-prettier": "^0.0.5"
+    "solhint-plugin-prettier": "^0.0.5",
+    "solidity-docgen": "^0.6.0-beta.34"
   },
   "keywords": [
     "mento",
@@ -35,6 +36,7 @@
     "solhint": "solhint --config \"./.solhint.json\" \"{contracts,test,script}/**/*.sol\"",
     "solhint:check": "solhint --config \"./.solhint.json\" \"{contracts,test,script}/**/*.sol\" -q",
     "test": "forge test",
+    "docs": "npx ts-node gendoc",
     "forge:build:slither": "forge clean && forge build --skip test --skip script --build-info",
     "fork-test": "env FOUNDRY_PROFILE=fork-tests forge test",
     "fork-test:baklava": "env FOUNDRY_PROFILE=fork-tests forge test --match-contract Baklava",
