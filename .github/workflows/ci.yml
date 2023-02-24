@@ -52,7 +52,6 @@ jobs:
           echo "::set-output name=matrix::$(ls contracts/proxies | sed 's/Proxy.sol//' | jq -R -s -c 'split("\n") | map(select(length > 0))') )"
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
-
   check_storage_layout:
     needs: get_proxy_names
     name: Check storage layout
